@@ -1,0 +1,47 @@
+:root {
+    /* --clr-lightgray: lightgray; */
+}
+
+
+.userInput {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.twoPerRow {
+    width: 425px;
+    padding: 0.5rem;
+    background-color: var(--clr-lightgray);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    gap: 0.25rem;
+}
+
+.macroInput {
+    width: 650px;
+    padding: 0.5rem;
+    /* background-color: azure; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.outputLayout {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.output {
+    width: 525px;
+    padding: 0.25rem;
+    background-color: var(--clr-lightgray);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    gap: 20px;
+}

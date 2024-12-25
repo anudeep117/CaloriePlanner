@@ -1,0 +1,32 @@
+.label {
+    font-family: 'Courier New', Courier, monospace;
+    padding: 0.5rem;
+}
+
+.outputDiv {
+    /* background-color: aqua; */
+    width: 250px;
+    height: 75px;
+    margin-right: 10px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    justify-content: left;
+}
+
+.outputValueUnit {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.value {
+    width: 100px;
+    height: 25px;
+    padding: 0.5rem;
+    border: 1px solid;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
