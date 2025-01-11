@@ -3,7 +3,6 @@ import Input from './components/inputs/InputRow';
 import OutputRow from './components/outputs/OutputRow';
 import MacrosTable from './components/outputs/MacrosTable';
 import Slider from './components/inputs/Slider';
-import styles from './styles/Layout.module.css';
 
 function App() {
     
@@ -21,7 +20,7 @@ function App() {
         fatSplitPcent: 30,
     })
 
-    const onInput = (e) => {
+    const onInput = (e: any) => {
         setParams({ ...params, [e.target.name]: e.target.value })
     }
 
@@ -78,7 +77,7 @@ function App() {
 
     return (
         <div className='justify-center'>
-            <div className='grid grid-rows-12 justitfy-items-center'>
+            <div className='grid grid-rows-12 justify-items-center'>
                 <div className='grid row-span-6 grid-cols-2 gap-y-2'>
                     {/* Current*/}
                     <Input label="Current Weight" name="currentWt" value={params.currentWt} unit="kg" handleChange={onInput}/>
