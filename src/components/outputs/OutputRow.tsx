@@ -1,7 +1,10 @@
-export default function OutputRow({
-    label
-    , value
-    , unit}) {        
+interface OutputRowProps {
+    label: string;
+    value: string;
+    unit: string;
+}
+
+export default function OutputRow({label, value,unit}: OutputRowProps) {        
     return (
         <div className='text-slate-200 grid gap-y-2 w-72'>
             <div>

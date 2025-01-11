@@ -1,4 +1,10 @@
-export default function MacrosOutput({protein, carbs, fat}) {
+interface MacrosOutputProps {
+    protein: string,
+    carbs: string,
+    fat: string,
+}
+
+export default function MacrosOutput({protein, carbs, fat}: MacrosOutputProps) {
     return (
         <div className="text-slate-200 grid grid-rows-3 gap-y-2 justify-items-start">
             <div className="grid grid-cols-2 items-center">

@@ -1,10 +1,14 @@
 import { useId } from 'react'
 
-export default function Input({label
-    , name
-    , value
-    , unit
-    , handleChange}) {
+interface InputProps {
+    label: string;
+    name: string;
+    value: number;
+    unit: string;
+    handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+export default function Input({label, name, value, unit, handleChange}: InputProps) {
     
     const inputId = useId();
     return (

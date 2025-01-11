@@ -1,11 +1,14 @@
-import styles from './../../styles/inputs/Input.module.css'
 import { useId } from 'react'
 
-export default function Slider({label
-    , name
-    , value
-    , unit
-    , handleChange}) {
+interface SliderProps {
+    label: string;
+    name: string;
+    value: number;
+    unit: string;
+    handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+export default function Slider({label, name, value, unit, handleChange}: SliderProps) {
     const inputId = useId();
     return (
         <div className='text-slate-200 grid grid-rows-2 '>
