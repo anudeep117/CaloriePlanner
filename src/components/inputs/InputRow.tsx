@@ -17,7 +17,7 @@ export default function Input({label, name, value, unit, handleChange}: InputPro
                 <label htmlFor={inputId}>{label}</label>
             </div>
             <div className='grid gap-x-2 grid-cols-2 items-center'>
-                <input className='bg-slate-200 text-black rounded-xl px-4 py-2'
+                <input className='bg-slate-200 text-black rounded-xl px-4 py-2 w-full'
                         id={inputId}
                         name={name}
                         type="number"

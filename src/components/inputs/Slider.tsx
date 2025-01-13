@@ -1,4 +1,4 @@
-import { useId } from 'react'
+import { useId } from 'react';
 
 interface SliderProps {
     label: string;
@@ -11,12 +11,12 @@ interface SliderProps {
 export default function Slider({label, name, value, unit, handleChange}: SliderProps) {
     const inputId = useId();
     return (
-        <div className='text-slate-200 grid grid-rows-2 '>
+        <div className='text-slate-200 grid gap-y-2'>
             <div>
                 <label htmlFor={inputId}>{label}</label>
             </div>
-            <div className='grid grid-cols-2 gap-x-4'>
-                <input type="range" className='w-96'
+            <div className='grid gap-x-2 grid-cols-2 items-center'>
+                <input type="range" className='w-full'
                     id={inputId}
                     name={name}
                     defaultValue={value}
@@ -28,5 +28,5 @@ export default function Slider({label, name, value, unit, handleChange}: SliderP
                 <label htmlFor={inputId}>{value} {unit}</label>
             </div>
         </div>
-    )
+    );
 }

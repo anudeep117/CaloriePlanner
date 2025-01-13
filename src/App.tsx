@@ -76,51 +76,36 @@ function App() {
     }, [params.calDeficit, params.activeCal])
 
     return (
-        <div className='justify-center'>
-            <div className='grid grid-rows-12 justify-items-center'>
-                <div className='grid row-span-6 grid-cols-2 gap-y-2'>
-                    {/* Current*/}
-                    <Input label="Current Weight" name="currentWt" value={params.currentWt} unit="kg" handleChange={onInput}/>
-                    <Input label={"Current Fat"} name={"currentFat"} value={params.currentFat} unit={"%"} handleChange={onInput} />
-
-                    {/* Ideal*/}
-                    <Input label={"Ideal Weight"} name={"idealWt"} value={params.idealWt} unit={"kg"} handleChange={onInput} />
-                    <Input label={"Ideal Fat"} name={"idealFat"} value={params.idealFat} unit={"%"} handleChange={onInput} />
-
-                    {/* Calorie deficit */}
-                    <Input label={"BMR"} name={"bmr"} value={params.bmr} unit={"kcal"} handleChange={onInput} />
-                    <Input label={"Fat / weight loss"} name={"fatLossToWtLossRatio"} value={params.fatLossToWtLossRatio} unit={""} handleChange={onInput} />
-                </div>
-                <div className='grid row-span-2 grid-cols-3'>
-                    <Input label={"Protein"} name={"proteinSplitPcent"} value={params.proteinSplitPcent} unit={"%"} handleChange={onInput} />
-                    <Input label={"Carbs"} name={"carbsSplitPcent"} value={params.carbsSplitPcent} unit={"%"} handleChange={onInput} />
-                    <Input label={"Fat"} name={"fatSplitPcent"} value={params.fatSplitPcent} unit={"%"} handleChange={onInput} />
-                </div>
-                <div className='grid row-span-4'>
-                    <Slider label={"Calorie Deficit"} name={"calDeficit"} value={params.calDeficit} unit={"kcal"} handleChange={onInput} />
-                    <Slider label={"Active Calories"} name={"activeCal"} value={params.activeCal} unit={"kcal"} handleChange={onInput} />
-                </div>
+        <div className="container mx-auto p-4">
+            <div className="grid gap-4 md:grid-cols-2">
+                <Input label="Current Weight" name="currentWt" value={params.currentWt} unit="kg" handleChange={onInput} />
+                <Input label="Current Fat" name="currentFat" value={params.currentFat} unit="%" handleChange={onInput} />
+                
+                <Input label="Ideal Weight" name="idealWt" value={params.idealWt} unit="kg" handleChange={onInput} />
+                <Input label="Ideal Fat" name="idealFat" value={params.idealFat} unit="%" handleChange={onInput} />
+                <Input label="BMR" name="bmr" value={params.bmr} unit="kcal" handleChange={onInput} />
+                <Input label="Fat / weight loss" name="fatLossToWtLossRatio" value={params.fatLossToWtLossRatio} unit="" handleChange={onInput} />
             </div>
-
+            <div className="mt-4 first-line:grid gap-4 md:grid-cols-2">
+                <Slider label="Active Calories" name="activeCal" value={params.activeCal} unit="kcal" handleChange={onInput} />
+                <Slider label="Calorie Deficit" name="calDeficit" value={params.calDeficit} unit="kcal" handleChange={onInput} />
+            </div>
             <br/>
             <hr></hr>
             <br/>
-
+            <div className="mt-4">
+                <MacrosTable protein={proteinSplitGrams} carbs={carbsSplitGrams} fat={fatSplitGrams}/>
+            </div>
             <br/>
-            <div className='grid grid-cols-2 justify-items-center'>
-                {/* Macro split */}
-                <div>
-                    <MacrosTable protein={proteinSplitGrams} carbs={carbsSplitGrams} fat={fatSplitGrams} />
-                </div>
-                
-                <div className='grid grid-cols-2 gap-y-4'>
-                    <OutputRow label={"Duration"} value={durationWeeks} unit={"weeks"} />
-                    <OutputRow label={"Duration"} value={durationMonths} unit={"Months"} />
-                    <OutputRow label={"Expected Weight loss"} value={expectedWtLoss} unit={"kg/week"} />
-                    <OutputRow label={"Expected Fat loss"} value={expectedFatLoss} unit={"kg/week"} />
-                    <OutputRow label={"Expected Muscle loss"} value={expectedMuscleLoss} unit={"kg/week"} />
-                    <OutputRow label={"Expected Final Fat %"} value={expectedFinalFatPcent} unit={"%"} />
-                </div>
+            <hr></hr>
+            <br/>
+            <div className="mt-4 grid gap-4 md:grid-cols-2">
+                <OutputRow label="Duration" value={durationWeeks} unit="weeks" />
+                <OutputRow label="Duration" value={durationMonths} unit="Months" />
+                <OutputRow label="Expected Weight Loss" value={expectedWtLoss} unit="kg/week" />
+                <OutputRow label="Expected Fat Loss" value={expectedFatLoss} unit="kg/week" />
+                <OutputRow label="Expected Muscle Loss" value={expectedMuscleLoss} unit="kg/week" />
+                <OutputRow label="Expected Final Fat %" value={expectedFinalFatPcent} unit="%" />
             </div>
         </div>
     );
