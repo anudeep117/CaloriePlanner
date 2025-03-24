@@ -6,9 +6,10 @@ interface InputProps {
     value: number;
     unit: string;
     handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    handleKeyUp: (event: React.KeyboardEvent<HTMLInputElement>) => void;
 }
 
-export default function Input({label, name, value, unit, handleChange}: InputProps) {
+export default function Input({label, name, value, unit, handleChange, handleKeyUp}: InputProps) {
     
     const inputId = useId();
     return (
@@ -22,6 +23,7 @@ export default function Input({label, name, value, unit, handleChange}: InputPro
                         name={name}
                         type="number"
                         onChange={handleChange}
+                        onKeyUp={handleKeyUp}
                         defaultValue={value}
                 />
                 <label htmlFor={inputId}>{unit}</label>
